@@ -1,0 +1,45 @@
+*{box-sizing:border-box} html,body{margin:0;padding:0}
+html,body{height:100%} body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+
+.with-bg { position: relative; overflow: hidden; background:#000; color:#fff; min-height:100dvh; }
+.with-bg::before {
+  content:""; position:absolute; inset:0; background-position:center; background-size:cover; background-repeat:no-repeat;
+  background-image:url("/hero-desktop.jpg"); filter:brightness(.82);
+}
+@media (max-aspect-ratio:3/4),(max-width:768px){ .with-bg::before{ background-image:url("/hero-mobile.jpg"); } }
+.with-bg > * { position: relative; z-index: 1; }
+
+.home { display:flex; flex-direction:column; gap: clamp(16px, 4vw, 40px); padding: clamp(24px, 5vw, 64px); }
+
+.hero { text-align:center; padding-top: min(16vh, 180px); }
+.headline { margin:0; font-weight:900; letter-spacing:.08em; font-size: clamp(28px, 6.4vw, 60px); }
+.subhead { margin:.6rem 0 1.4rem; opacity:.95; font-size: clamp(14px, 2vw, 20px); letter-spacing:.12em; }
+
+.featured .grid {
+  display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: clamp(12px, 2vw, 24px);
+}
+@media (max-width: 960px){ .featured .grid{ grid-template-columns: 1fr; } }
+
+.card{
+  background: rgba(0,0,0,.35);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:16px;
+  padding:12px;
+  backdrop-filter: blur(6px);
+}
+.thumb{ height:160px; background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(0,0,0,.1)); border-radius:12px; }
+.meta h3{ margin:10px 0 4px; font-size: 18px; }
+.meta p{ margin:0; opacity:.8; font-size: 14px; }
+.actions{ display:flex; gap:8px; margin-top:10px; }
+.pill{ all:unset; border:1px solid rgba(255,255,255,.28); padding:8px 10px; border-radius:999px; font-size:13px; cursor:pointer; }
+.pill:hover{ background: rgba(255,255,255,.08); }
+
+.cta-row{ text-align:center; margin-top: 8px; }
+.cta-lead{ opacity:.9; margin-bottom:10px; }
+.cta-buttons{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+.cta{ display:inline-block; padding:12px 18px; border-radius:999px; border:1px solid rgba(255,255,255,.6); text-decoration:none; color:#fff; }
+.cta.gold{ border-color: #d8b16f; } .cta.silver{ border-color:#c6c6c6; } .cta.green{ border-color:#7ca483; }
+.btn-ghost{ display:inline-block; padding:10px 14px; border:1px solid #fff; border-radius:999px; text-decoration:none; color:#fff; }
+
+.home-footer{ display:flex; justify-content:space-between; align-items:center; margin-top:auto; }
+.badge{ letter-spacing:.12em; font-size:12px; padding:6px 10px; border:1px solid rgba(255,255,255,.35); border-radius:999px; background: rgba(0,0,0,.3); }
