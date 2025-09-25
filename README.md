@@ -20,5 +20,5 @@ A minimal Next.js (App Router) splash page ready for Vercel upload.
 npm i
 npm run dev
 ```
-
+Test Commit - 9/25 just checking deploy
 Then open http://localhost:3000
